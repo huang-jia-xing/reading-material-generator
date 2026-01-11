@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分层阅读材料生成系统 | 港澳小学教师专用</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1><i class="fas fa-book-reader"></i> 分层阅读材料生成系统</h1>
+            <p>专为港澳小学教师设计 | 一键生成个性化分层阅读材料</p>
+        </div>
+
+        <!-- 主要内容 -->
+        <div class="main-content">
+            <!-- 使用次数显示 -->
+            <div class="usage-display" id="usageDisplay">
+                <i class="fas fa-chart-line"></i> 加载使用统计...
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-section">
+                <h2 class="section-title"><i class="fas fa-edit"></i> 输入教学材料</h2>
+
+                <div class="input-group">
+                    <label for="originalText"><i class="fas fa-file-alt"></i> 原文 / 主题：</label>
+                    <textarea id="originalText" placeholder="请输入原文内容或主题描述（建议200-500字）...
+例如：香港是一個國際大都會，有美麗的維多利亞港和豐富的文化遺產。"></textarea>
+                </div>
+
+                <div class="select-row">
+                    <div class="select-group">
+                        <label for="targetGrade"><i class="fas fa-graduation-cap"></i> 目标年级：</label>
+                        <select id="targetGrade">
+                            <option value="一年級">一年級</option>
+                            <option value="二年級">二年級</option>
+                            <option value="三年級" selected>三年級</option>
+                            <option value="四年級">四年級</option>
+                            <option value="五年級">五年級</option>
+                            <option value="六年級">六年級</option>
+                        </select>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="versionCount"><i class="fas fa-layer-group"></i> 版本数量：</label>
+                        <select id="versionCount">
+                            <option value="2">2个版本（基础版+挑战版）</option>
+                            <option value="3" selected>3个版本（基础版+标准版+挑战版）</option>
+                            <option value="4">4个版本（基础版+标准版+挑战版+拓展版）</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 示例按钮 -->
+                <div class="example-section">
+                    <p><i class="fas fa-lightbulb"></i> 快速示例：</p>
+                    <div class="example-buttons" id="exampleButtons">
+                        <!-- 由JavaScript动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 保存的主题 -->
+                <div class="theme-section">
+                    <p><i class="fas fa-save"></i> 已保存的主题：</p>
+                    <div class="theme-list" id="themeList">
+                        <!-- 由JavaScript动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 生成按钮 -->
+                <div class="button-group">
+                    <button id="generateBtn" class="btn btn-primary-large">
+                        <i class="fas fa-magic"></i> 生成阅读材料
+                    </button>
+                    <button onclick="resetForm()" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> 重置
+                    </button>
+                </div>
+            </div>
+
+            <!-- 进度区域 -->
+            <div class="progress-section" id="progressSection">
+                <h3><i class="fas fa-spinner fa-spin"></i> 正在生成阅读材料...</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="status-text" id="statusText">正在初始化...</div>
+            </div>
+
+            <!-- 结果区域 -->
+            <div class="result-section" id="resultSection">
+                <div id="resultContent">
+                    <!-- 由JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <p><i class="fas fa-info-circle"></i> 分层阅读材料生成系统 v1.0</p>
+            <p>专为港澳小学教育设计 | 技术支持：基于Coze AI工作流开发</p>
+            <p><i class="fas fa-exclamation-triangle"></i> 注意：本系统完全免费，每人每天限用10次，每月限用50次</p>
+            <p>如有问题，请联系系统管理员</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 简单的重置表单函数
+        function resetForm() {
+            document.getElementById('originalText').value = '';
+            document.getElementById('targetGrade').value = '三年級';
+            document.getElementById('versionCount').value = '3';
+
+            document.getElementById('progressSection').style.display = 'none';
+            document.getElementById('resultSection').style.display = 'none';
+
+            alert('表单已重置！');
+        }
+    </script>
+</body>
+</html>
