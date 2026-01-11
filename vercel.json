@@ -1,0 +1,25 @@
+{
+  "functions": {
+    "api/generate.py": {
+      "runtime": "python3.9",
+      "includeFiles": "**/*.py"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/generate",
+      "destination": "/api/generate.py"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ]
+}
