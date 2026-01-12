@@ -142,21 +142,16 @@ const ThemeManager = {
 };
 
 // ==================== API调用管理器 ====================
+// 找到APIManager配置，大约在第50-70行
 const APIManager = {
-    // 测试模式下，使用模拟数据
-    TEST_MODE: true,
-
-    // API配置
+    // 改为false，使用生产环境
+    TEST_MODE: false,
+    
     config: {
-        local: 'http://localhost:5000/api/generate',
-        vercel: 'https://your-project.vercel.app/api/generate'
+        vercel: 'https://reading-material-system.vercel.app/api/generate'
     },
-
-    // 获取当前API地址
+    
     getApiUrl: function() {
-        if (this.TEST_MODE || window.location.hostname === 'localhost') {
-            return this.config.local;
-        }
         return this.config.vercel;
     },
 
@@ -528,4 +523,5 @@ function showTroubleshooting() {
 
 // 全局暴露函数（用于HTML中的onclick调用）
 window.ThemeManager = ThemeManager;
+
 window.UsageManager = UsageManager;
