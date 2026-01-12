@@ -148,7 +148,7 @@ const APIManager = {
     TEST_MODE: false,
     
     config: {
-        vercel: 'https://reading-material-generator-ude7-73bze1i1w.vercel.app/api/generate'
+        vercel: 'https://reading-material-generator-ude7.vercel.app/api/generate'
     },
     
     getApiUrl: function() {
@@ -525,4 +525,5 @@ function showTroubleshooting() {
 window.ThemeManager = ThemeManager;
 
 window.UsageManager = UsageManager;
+
 
