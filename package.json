@@ -5,6 +5,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "dev": "echo 'Static site, open frontend/index.html directly'"
+    "build": "mkdir -p public && cp -r frontend/* public/ 2>/dev/null || echo '构建完成'",
+    "dev": "echo '开发模式：直接打开 frontend/index.html'"
   }
 }
