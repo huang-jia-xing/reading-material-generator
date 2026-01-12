@@ -12,18 +12,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/$1"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
+      "dest": "/public/$1"
     }
   ]
 }
