@@ -148,11 +148,15 @@ const APIManager = {
     TEST_MODE: false,
     
     config: {
-        vercel: 'https://reading-material-system.vercel.app/api/generate'
+       vercel: '/api/generate' // 生产环境
     },
     
     getApiUrl: function() {
-        return this.config.vercel;
+        if (this.TEST_MODE) {
+            return this.config.local;
+        } else {
+            return this.config.vercel;
+        }
     },
 
     // 调用后端API

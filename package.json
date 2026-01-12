@@ -5,6 +5,6 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "pip install -r requirements.txt"
+    "dev": "echo 'Static site, open frontend/index.html directly'"
   }
 }
