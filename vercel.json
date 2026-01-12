@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "functions": {
-    "api/generate.py": {
-      "runtime": "python3.9"
+  "builds": [
+    {
+      "src": "frontend/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/generate.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.11"
+      }
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
@@ -12,7 +20,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/public/$1"
+      "dest": "/frontend/$1"
     }
   ]
 }
